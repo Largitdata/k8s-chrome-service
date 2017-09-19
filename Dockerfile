@@ -15,3 +15,4 @@ RUN apk update && \
 COPY ./probe.sh ./ready-probe.sh /
 
 ENTRYPOINT ["pm2-docker", "chromedriver", "--", "--whitelisted-ips"]
+EXPOSE 9515
