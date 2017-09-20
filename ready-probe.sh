@@ -1,8 +1,8 @@
 #!/bin/sh
 
-CNT=`ps -ef|grep chrome|egrep -v "chromedriver|grep"|wc -l`
-if [ "$CNT" -gt "20" ];
+netstat -na|grep 0.0.0.0:9515
+if [ $? -ne 0 ];
 then
-    echo "Too many chrome process are running.."
+    echo "chromedriver is not running.."
     exit 100
 fi
