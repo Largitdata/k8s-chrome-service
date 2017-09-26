@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ps -eo pid,comm,etime |grep " chrome "|awk '{split($3,a,":"); if(int(a[1])>10) print $1 }'|xargs - n 1 kill -9
+ps -eo pid,comm,etime |grep " chrome "|awk '{split($3,a,":"); if(int(a[1])>10) print $1 }'|xargs -n 1 kill -9
 
 CNT=`ps -ef|grep chrome.*proxy|egrep -v "chromedriver|grep"|wc -l`
 if [ "$CNT" -gt "30" ];
